@@ -13,6 +13,8 @@
 >|root|root|
 >|admin|password|
 >|user|12345|
+<br>
+
 >Use the correct credentials to log in to the Santa Sleigh Tracker app. Don't forget to turn off Foxyproxy once BurpSuite has finished the attack!
 
 ### 1. What is the flag? `[***{*********...}]`
