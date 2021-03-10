@@ -1,5 +1,4 @@
-# The Elf Strikes Back!
-`[Web Exploit]`
+# `[Web Exploit]` The Elf Strikes Back!
 
 ## Intro
 >After your heroic deeds regaining control of the control centre yesterday, Elf McSkidy has decided to give you an important job to do.
