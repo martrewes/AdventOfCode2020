@@ -59,3 +59,13 @@ I then ran the netcat listener with `nc -lvnp 443`, then went to the file using 
 ### 4. What is the flag in `/var/www/flag.txt`? `[***{****...}]`
 
 Answer = `THM{MGU3Y2UyMGUwNjExYTY4NTAxOWJhMzhh}`
+
+---
+```
+Tags:
+    netcat
+    reverse shell
+    GET
+    file extensions
+    cat
+```

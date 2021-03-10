@@ -48,3 +48,12 @@ I can now just paste that into the `auth` cookie in developer options so I can a
 ### 5. What is the flag you're given when the line is fully active? `[***{**********...}]`
 
 Answer = `THM{MjY0Yzg5NTJmY2Q1NzM1NjBmZWFhYmQy}` *(Appears at bottom of page)*
+
+---
+```
+Tags:
+    cookies
+    hex
+    auth
+    json
+```
