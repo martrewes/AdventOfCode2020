@@ -88,7 +88,7 @@ Answer = `filefart`
 
 I had to follow some instructions left in a `.txt` file in `/root`:
 
-'''
+```
 Nice work, Santa!
 
 Wow, this house sure was DIRTY!
@@ -110,7 +110,7 @@ for the Advent of Cyber!
                 er, sorry, I mean, the Grinch
 
           - THE GRINCH, SERIOUSLY
-'''
+```
 So I did the above with `touch coal` and then `tree | md5sum`
 
 Answer = `8b16f00dd3b51efadb02c1df7f8427cc`
