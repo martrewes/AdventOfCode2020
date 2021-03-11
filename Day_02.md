@@ -1,9 +1,9 @@
 # `[Web Exploit]` The Elf Strikes Back!
 
 ## Intro
->After your heroic deeds regaining control of the control centre yesterday, Elf McSkidy has decided to give you an important job to do.
+>*After your heroic deeds regaining control of the control centre yesterday, Elf McSkidy has decided to give you an important job to do.*
 >
->"We know we've been hacked, so we need a way to protect ourselves! The dev team have set up a website for the elves to upload pictures of any suspicious people hanging around the factory, but we need to make sure it's secure before we add it to the public network. Please perform a security audit on the new server and make sure it's unhackable!"
+>"*We know we've been hacked, so we need a way to protect ourselves! The dev team have set up a website for the elves to upload pictures of any suspicious people hanging around the factory, but we need to make sure it's secure before we add it to the public network. Please perform a security audit on the new server and make sure it's unhackable!*
 
 ### Additional Info to Note
 #### Putting it all together

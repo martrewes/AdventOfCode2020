@@ -1,9 +1,9 @@
 # `[Web Exploit]` Santa's Watching
 
 ## Intro
->We're going to be taking a look at some of the fundamental tools used in web application testing. You're going to learn how to use Gobuster to enumerate a web server for hidden files and folders to aid in the recovery of Elf's forums. Later on, you're going to be introduced to an important technique that is fuzzing, where you will have the opportunity to put theory into practice.
+>*We're going to be taking a look at some of the fundamental tools used in web application testing. You're going to learn how to use Gobuster to enumerate a web server for hidden files and folders to aid in the recovery of Elf's forums. Later on, you're going to be introduced to an important technique that is fuzzing, where you will have the opportunity to put theory into practice.*
 >
->Our malicious, despicable, vile, cruel, contemptuous, evil hacker has defaced Elf's forums and completely removed the login page! However, we may still have access to the API. The sysadmin also told us that the API creates logs using dates with a format of YYYYMMDD.
+>*Our malicious, despicable, vile, cruel, contemptuous, evil hacker has defaced Elf's forums and completely removed the login page! However, we may still have access to the API. The sysadmin also told us that the API creates logs using dates with a format of YYYYMMDD.*
 
 ### Additional Info to Note
 #### How to approach the challenge
@@ -19,7 +19,7 @@
 ### 1. Provide a wfuzz command `[***** ** ** ****,***.*** ****://******.***/***.**************]
 >Given the URL "http://shibes.xyz/api.php", what would the entire wfuzz command look like to query the "breed" parameter using the wordlist "big.txt" (assume that "big.txt" is in your current directory)
 
-I followed the example and used what was learned about get examples in a previous day.
+I followed the example and used what was learned about `get` examples in a previous day.
 
 Answer = `wfuzz -c -z file,big.txt http://shibes.xyz/api.php?breed=FUZZ`
 
