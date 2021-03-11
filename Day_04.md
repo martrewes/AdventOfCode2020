@@ -78,7 +78,7 @@ Answer = `THM{D4t3_AP1}`
 ---
 ```
 Tags:
-gobuster
-fuzzing
-wordlists
+    gobuster
+    fuzzing
+    wordlists
 ```
