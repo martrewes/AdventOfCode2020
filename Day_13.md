@@ -115,7 +115,7 @@ So I did the above with `touch coal` and then `tree | md5sum`
 
 Answer = `8b16f00dd3b51efadb02c1df7f8427cc`
 
-
+---
 ```
 Tags:
     telnet

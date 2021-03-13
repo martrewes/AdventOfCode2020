@@ -21,12 +21,46 @@ Answer = `/santapanel`
 
 >Visit Santa's secret login panel and bypass the login using SQLi
 
-### 2. How many entries are there in the gift database?
+### 2. How many entries are there in the gift database? `[##]`
 
-I can't seem to get any of this to work right now. I think I will leave Web Exploits for a bit and move on to something else. 
+>I can't seem to get any of this to work right now. I think I will leave Web Exploits for a bit and move on to something else. 
+>
+>**I will come back to it.**
 
-**I will come back to it.**
+Okay so I worked my way back to this after doing Day 16.
 
+I eventually got into the page using `username' or 1=1 --` as the user.
+
+I ran the same trick on the gift list page and it spat out all of the entries
+
+Answer = `22`
+
+### 3. What did Paul ask for? `[###### #########]`
+
+I just looked in the table and it showed up:
+
+Answer = `github ownership`
+
+### 4. What is the flag?
+
+So I managed to get sqlmap working. Originally it would throw an error saying it could not find the file specified, but upon googling around, I found a workaround to put the file in the /tmp/ directory. I did this and all was well.
+
+```
+sqlmap -r /tmp/panel.request --tamper=space2comment --dump-all --dbms sqlite
+```
+
+This also gave me access to the gift table etc.
+
+Answer = `[thmfox{All_I_Want_for_Christmas_Is_You}]`
+
+### 5. What is admin's password?
+
+Also in the database.
+
+Answer = `EhCNSWzzFP6sc7gB`
+
+
+---
 ```
 Tags:
     SQL injection
