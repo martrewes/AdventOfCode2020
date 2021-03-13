@@ -48,3 +48,9 @@ Answer = `[1, 2, 3, 6]`
 ### 6. What causes the previous task to output that? `[**** ** *********]`
 
 Answer = `pass by reference`
+
+```
+Tags:
+    python
+    scripts
+```
