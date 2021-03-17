@@ -12,7 +12,7 @@ This was as simple as a google search.
 
 Answer = `1998`
 
-### 2. Using Nmap on 10.10.***.*** , what are the port numbers of the three services running?  (Please provide your answer in ascending order/lowest -> highest, separated by a comma) `[**,****,****]`
+### 2. Using Nmap on 10.10.\*\*\*.\*\*\* , what are the port numbers of the three services running?  (Please provide your answer in ascending order/lowest -> highest, separated by a comma) `[**,****,****]`
 
 Doing a quick `nmap -sS` scan resulted in the following:
 ```
