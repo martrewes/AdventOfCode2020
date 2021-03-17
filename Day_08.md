@@ -125,5 +125,7 @@ No answer required.
 ---
 ```
 Tags:
-    
+    nmap
+    snot
+    ip scanning
 ```
