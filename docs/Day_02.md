@@ -24,7 +24,7 @@ At the bottom of the dossier is a sticky note containing the following message:
 >
 >Good luck!
 
-## Tasks
+# Tasks
 
 ### 1. What string of text needs adding to the URL to get access to the upload page? `[?**=****************]`
 
