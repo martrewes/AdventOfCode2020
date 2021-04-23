@@ -7,6 +7,6 @@ I will attempt to do one a day, however due to the event ending a while ago, I d
 ---
 # Complete
 
-I endewd up completing this in my own time as well as completing tasks in picoCTF, hence the lack of write-ups. Below is the certificate as *proof*:
+I ended up completing this in my own time as well as completing tasks in picoCTF, hence the lack of write-ups. Below is the certificate as *proof*:
 
 ![img](THM-Cert.png)
