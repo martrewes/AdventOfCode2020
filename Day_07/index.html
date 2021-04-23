@@ -1,0 +1,796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Day 7. `[Networking]` The Grinch Really Did Steal Christma - Advent of Code 2020 Log</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="lime">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#day-7-networking-the-grinch-really-did-steal-christma" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Advent of Code 2020 Log" class="md-header__button md-logo" aria-label="Advent of Code 2020 Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advent of Code 2020 Log
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Day 7. `[Networking]` The Grinch Really Did Steal Christma
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="lime" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Advent of Code 2020 Log" class="md-nav__button md-logo" aria-label="Advent of Code 2020 Log" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Advent of Code 2020 Log
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Advent of Cyber 2020 Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_01/" class="md-nav__link">
+        Day 1. `[Web Explioit]` A Christmas Crisis
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_02/" class="md-nav__link">
+        Day 2. `[Web Exploit]` The Elf Strikes Back!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_03/" class="md-nav__link">
+        Day 3. `[Web Exploit]` Christmas Chaos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_04/" class="md-nav__link">
+        Day 4. `[Web Exploit]` Santa's Watching
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_05/" class="md-nav__link">
+        Day 5. `[Web Exploit]` Someone Stole Santa's Gift List!
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_06/" class="md-nav__link">
+        Day 6. `[Web Exploit]` Be careful with what you wish on a Christmas night
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Day 7. `[Networking]` The Grinch Really Did Steal Christma
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Day 7. `[Networking]` The Grinch Really Did Steal Christma
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-pcap1pcap-in-wireshark-what-is-the-ip-address-that-initiates-an-icmpping" class="md-nav__link">
+    1. Open "pcap1.pcap" in Wireshark. What is the IP address that initiates an ICMP/ping? [**.**.*.*]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-if-we-only-wanted-to-see-http-get-requests-in-our-pcap1pcap-file-what-filter-would-we-use" class="md-nav__link">
+    2. If we only wanted to see HTTP GET requests in our "pcap1.pcap" file, what filter would we use? [****.*******.****** ** ***]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-now-apply-this-filter-to-pcap1pcap-in-wireshark-what-is-the-name-of-the-article-that-the-ip-address-101067199-visited" class="md-nav__link">
+    3. Now apply this filter to "pcap1.pcap" in Wireshark, what is the name of the article that the IP address "10.10.67.199" visited? [********************]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lets-begin-analysing-pcap2pcap-look-at-the-captured-ftp-traffic-what-password-was-leaked-during-the-login-process" class="md-nav__link">
+    4. Let's begin analysing "pcap2.pcap". Look at the captured FTP traffic; what password was leaked during the login process? [*************************]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-continuing-with-our-analysis-of-pcap2pcap-what-is-the-name-of-the-protocol-that-is-encrypted" class="md-nav__link">
+    5. Continuing with our analysis of "pcap2.pcap", what is the name of the protocol that is encrypted? [***]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-analyse-pcap3pcap-and-recover-christmas-what-is-on-elf-mcskidys-wishlist-that-will-be-used-to-replace-elf-mceager" class="md-nav__link">
+    6. Analyse "pcap3.pcap" and recover Christmas! - What is on Elf McSkidy's wishlist that will be used to replace Elf McEager? [****** *****]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_08/" class="md-nav__link">
+        Day 8. `[Networking]` What's Under the Christmas Tree?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_09/" class="md-nav__link">
+        Day 9. `[Networking]` Anyone can be Santa
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_10/" class="md-nav__link">
+        Day 10. `[Networking]` Don't be sELFish
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_13/" class="md-nav__link">
+        Day 13. `[Special by John Hammond]` Coal for Christmas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_14/" class="md-nav__link">
+        Day 14. `[Special by TheCyberMentor]` Where's Rudolph?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_15/" class="md-nav__link">
+        Day 15. `[Scripting]` There's a Python in My Stocking
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Day_16/" class="md-nav__link">
+        Day 16. `[Scripting]` Help! Where's Santa?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      <label class="md-nav__link" for="__nav_16">
+        AdditionalFiles
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AdditionalFiles" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          AdditionalFiles
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_1" type="checkbox" id="__nav_16_1" >
+      
+      <label class="md-nav__link" for="__nav_16_1">
+        Day 16
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Day 16" data-md-level="2">
+        <label class="md-nav__title" for="__nav_16_1">
+          <span class="md-nav__icon md-icon"></span>
+          Day 16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AdditionalFiles/Day%2016/apikey/" class="md-nav__link">
+        Apikey
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AdditionalFiles/Day%2016/grabber/" class="md-nav__link">
+        Grabber
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-pcap1pcap-in-wireshark-what-is-the-ip-address-that-initiates-an-icmpping" class="md-nav__link">
+    1. Open "pcap1.pcap" in Wireshark. What is the IP address that initiates an ICMP/ping? [**.**.*.*]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-if-we-only-wanted-to-see-http-get-requests-in-our-pcap1pcap-file-what-filter-would-we-use" class="md-nav__link">
+    2. If we only wanted to see HTTP GET requests in our "pcap1.pcap" file, what filter would we use? [****.*******.****** ** ***]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-now-apply-this-filter-to-pcap1pcap-in-wireshark-what-is-the-name-of-the-article-that-the-ip-address-101067199-visited" class="md-nav__link">
+    3. Now apply this filter to "pcap1.pcap" in Wireshark, what is the name of the article that the IP address "10.10.67.199" visited? [********************]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lets-begin-analysing-pcap2pcap-look-at-the-captured-ftp-traffic-what-password-was-leaked-during-the-login-process" class="md-nav__link">
+    4. Let's begin analysing "pcap2.pcap". Look at the captured FTP traffic; what password was leaked during the login process? [*************************]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-continuing-with-our-analysis-of-pcap2pcap-what-is-the-name-of-the-protocol-that-is-encrypted" class="md-nav__link">
+    5. Continuing with our analysis of "pcap2.pcap", what is the name of the protocol that is encrypted? [***]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-analyse-pcap3pcap-and-recover-christmas-what-is-on-elf-mcskidys-wishlist-that-will-be-used-to-replace-elf-mceager" class="md-nav__link">
+    6. Analyse "pcap3.pcap" and recover Christmas! - What is on Elf McSkidy's wishlist that will be used to replace Elf McEager? [****** *****]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="day-7-networking-the-grinch-really-did-steal-christma">Day 7. <code>[Networking]</code> The Grinch Really Did Steal Christma</h1>
+<h2 id="intro">Intro</h2>
+<blockquote>
+<p>It's 6 AM and Elf McSkidy is clocking-in to The Best Festival Company's SOC headquarters to begin his watch over TBFC's infrastructure. After logging in, Elf McEager proceeds to read through emails left by Elf McSkidy during the nightshift.</p>
+<p>More automatic scanning alerts, oh look, another APT group. It feels like it's going to be a long, but easy start to the week for Elf McEager.</p>
+<p>Whilst clearing the backlog of emails, Elf McEager reads the following: "URGENT: Data exfiltration detected on TBFC-WEB-01". "Uh oh" goes Elf McEager. "TBFC-WEB-01? That's Santa's webserver! Who has the motive to steal data from there?!". It's time for the ever-vigilant Elf McEager to prove his salt and find out exactly what happened.</p>
+<p>Unknowingly to Elf McEager, Elf McSkidy made this all up! Fortunately, this isn't a real attack - but a training exercise created ahead of Elf McEager's performance review.</p>
+</blockquote>
+<h2 id="tasks">Tasks</h2>
+<blockquote>
+<p>These are quite easy to go through with WireShark</p>
+</blockquote>
+<h3 id="1-open-pcap1pcap-in-wireshark-what-is-the-ip-address-that-initiates-an-icmpping">1. Open "pcap1.pcap" in Wireshark. What is the IP address that initiates an ICMP/ping? <code>[**.**.*.*]</code></h3>
+<p>Answer = <code>10.11.3.2</code></p>
+<h3 id="2-if-we-only-wanted-to-see-http-get-requests-in-our-pcap1pcap-file-what-filter-would-we-use">2. If we only wanted to see HTTP GET requests in our "pcap1.pcap" file, what filter would we use? <code>[****.*******.****** ** ***]</code></h3>
+<p>Answer = <code>http.request.method == GET</code></p>
+<h3 id="3-now-apply-this-filter-to-pcap1pcap-in-wireshark-what-is-the-name-of-the-article-that-the-ip-address-101067199-visited">3. Now apply this filter to "pcap1.pcap" in Wireshark, what is the name of the article that the IP address "10.10.67.199" visited? <code>[********************]</code></h3>
+<p>Answer = <code>reindeer-of-the-week</code></p>
+<h3 id="4-lets-begin-analysing-pcap2pcap-look-at-the-captured-ftp-traffic-what-password-was-leaked-during-the-login-process">4. Let's begin analysing "pcap2.pcap". Look at the captured FTP traffic; what password was leaked during the login process? <code>[*************************]</code></h3>
+<p>Answer = <code>plaintext_password_fiasco</code></p>
+<h3 id="5-continuing-with-our-analysis-of-pcap2pcap-what-is-the-name-of-the-protocol-that-is-encrypted">5. Continuing with our analysis of "pcap2.pcap", what is the name of the protocol that is encrypted? <code>[***]</code></h3>
+<p>Answer = <code>ssh</code></p>
+<h3 id="6-analyse-pcap3pcap-and-recover-christmas-what-is-on-elf-mcskidys-wishlist-that-will-be-used-to-replace-elf-mceager">6. Analyse "pcap3.pcap" and recover Christmas! - What is on Elf McSkidy's wishlist that will be used to replace Elf McEager? <code>[****** *****]</code></h3>
+<p>Found a zip in Wireshark so I exported and extracted that. Inside was a text file.</p>
+<p>Answer = <code>Rubber ducky</code></p>
+<hr />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Tags:
+    wireshark
+    ip address
+    http
+    smb
+    pcaps
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Day_06/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Day 6. `[Web Exploit]` Be careful with what you wish on a Christmas night
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Day_08/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Day 8. `[Networking]` What's Under the Christmas Tree?
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
